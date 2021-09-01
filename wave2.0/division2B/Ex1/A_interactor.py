@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""https://contest.yandex.ru/contest/28730/problems/"""
+"""https://contest.yandex.ru/contest/28730/problems/A/"""
 
 
 def solve(return_code: int,
-           interactor_code: int,
-           checker_code: int) -> int:
+          interactor_code: int,
+          checker_code: int) -> int:
     """
     Return the final decision.
 
@@ -23,6 +23,7 @@ def solve(return_code: int,
     int
 
     """
+    # let's make sure bad input won't be a hindrance 
     if (-128 <= return_code <= 127) and \
         (0 <= interactor_code <= 7) and \
         (0 <= checker_code <= 7):
@@ -46,4 +47,4 @@ def solve(return_code: int,
 
 if __name__ == '__main__':
     ret, inter, check = (int(input()) for _ in range(3))
-    print(f'\nans = {solve(ret, inter, check)}')
+    print(solve(ret, inter, check))

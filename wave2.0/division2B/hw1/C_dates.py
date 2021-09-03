@@ -62,18 +62,11 @@ def solve(day_or_month: int, month_or_day: int, year: int) -> int:
     int
 
     """
-    # let's make sure bad input won't be a hindrance
-    if (
-        (isinstance(day_or_month, int) and 1 <= day_or_month <= 31)
-        and (isinstance(month_or_day, int) and 1 <= month_or_day <= 31)
-        and (isinstance(year, int) and 1970 <= year <= 2069)
-    ):
-        date1 = day_or_month, month_or_day, year
-        res1 = validate_date(*date1)
-        date2 = month_or_day, day_or_month, year
-        res2 = validate_date(*date2)
-        return int(not (res1 and res2 and date1 != date2))
-    return 1
+    date1 = day_or_month, month_or_day, year
+    res1 = validate_date(*date1)
+    date2 = month_or_day, day_or_month, year
+    res2 = validate_date(*date2)
+    return int(not (res1 and res2 and date1 != date2))
 
 
 if __name__ == "__main__":

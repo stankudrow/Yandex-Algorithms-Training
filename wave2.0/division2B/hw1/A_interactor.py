@@ -7,10 +7,7 @@
 # pylint: disable=too-many-return-statements
 
 
-from typing import Optional
-
-
-def solve(return_code: int, interactor_code: int, checker_code: int) -> Optional[int]:
+def solve(ret: int, inter: int, check: int) -> int:
     """
     Return the final decision.
 
@@ -28,28 +25,21 @@ def solve(return_code: int, interactor_code: int, checker_code: int) -> Optional
     int
 
     """
-    # let's make sure bad input won't be a hindrance
-    if (
-        (-128 <= return_code <= 127)
-        and (0 <= interactor_code <= 7)
-        and (0 <= checker_code <= 7)
-    ):
-        if interactor_code == 0:
-            if return_code:
-                return 3
-            return checker_code
-        if interactor_code == 1:
-            return checker_code
-        if interactor_code == 4:
-            if return_code:
-                return 3
-            return 4
-        if interactor_code == 6:
-            return 0
-        if interactor_code == 7:
-            return 1
-        return interactor_code
-    return None  # explicit
+    if inter == 0:
+        if ret:
+            return 3
+        return check
+    if inter == 1:
+        return check
+    if inter == 4:
+        if ret:
+            return 3
+        return 4
+    if inter == 6:
+        return 0
+    if inter == 7:
+        return 1
+    return inter
 
 
 if __name__ == "__main__":

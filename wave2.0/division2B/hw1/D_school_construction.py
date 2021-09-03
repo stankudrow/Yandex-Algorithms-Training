@@ -9,6 +9,8 @@
 from math import ceil
 
 
+# 0 < total < 100001
+# abs(coord) <= 2e9
 if __name__ == "__main__":
     total = int(input())
     coords = [int(coord) for i, coord in zip(range(total), input().split())]

@@ -10,9 +10,9 @@
 from typing import Tuple
 
 
-def dist(point1: Tuple[int, int], point2: Tuple[int, int]) -> float:
+def sqdist(point1: Tuple[int, int], point2: Tuple[int, int]) -> int:
     """
-    Return the distance between two 2D points.
+    Return the squared distance between two 2D points.
 
     Parameters
     ----------
@@ -21,12 +21,12 @@ def dist(point1: Tuple[int, int], point2: Tuple[int, int]) -> float:
 
     Returns
     -------
-    float
+    int
 
     """
     xc1, yc1 = point1
     xc2, yc2 = point2
-    return ((xc2 - xc1) ** 2 + (yc2 - yc1) ** 2) ** 0.5
+    return ((xc2 - xc1) ** 2 + (yc2 - yc1) ** 2)
 
 
 def solve(xcoord: int, ycoord: int, leg: int) -> int:
@@ -56,9 +56,9 @@ def solve(xcoord: int, ycoord: int, leg: int) -> int:
         return 0
     point = (xcoord, ycoord)
     distances = [
-        (dist(point, (0, 0)), 1),
-        (dist(point, (leg, 0)), 2),
-        (dist(point, (0, leg)), 3),
+        (sqdist(point, (0, 0)), 1),
+        (sqdist(point, (leg, 0)), 2),
+        (sqdist(point, (0, leg)), 3),
     ]
     return min(distances)[1]
 

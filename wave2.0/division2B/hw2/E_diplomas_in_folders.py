@@ -9,4 +9,9 @@
 if __name__ == "__main__":
     folders_total = int(input())
     folders = tuple(map(int, input().split()))
-    print(sum(sorted(folders)[:-1]))
+    summ, maxx = 0, folders[0]
+    for folder in folders:
+        summ += folder
+        if folder > maxx:
+            maxx = folder
+    print(summ - maxx)

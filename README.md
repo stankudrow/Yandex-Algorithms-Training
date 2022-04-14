@@ -1,2 +1,5 @@
 # Yandex-Algorithms-Training
-Solutions to Yandex algorithms contest.
+
+Решения алгоритмических задач Яндекс тренировок.
+
+Программы с чтениями/разборами/задачами - https://yandex.ru/yaintern/algorithm-training.
